@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* End Reset */
+
+/* Variables */
+:root {
+  --Dark-Navy: hsla(200, 32%, 15%, 1);
+  --Semi-Dark-Navy: hsla(200, 35%, 19%, 1);
+  --Silver: hsla(199, 24%, 73%, 1);
+  --Light-Yellow: #f2b137;
+  --Light-Blue: #31c3bd;
+  --light-yellow-hover: #ffc860;
+  --light-blue-hover: #65e9e4;
+}
+/* End Variables */
+
+/* General */
+body {
+  background-color: var(--Dark-Navy);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+/* End General */
+
+/* Start Widget */
+
+.start-container {
+  display: grid;
+  gap: 40px;
+}
+
+.logo {
+  justify-self: center;
+}
+
+.choices-box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Semi-Dark-Navy);
+  gap: 24px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0px -8px 0px 0px #10212a inset;
+}
+
+h3 {
+  color: var(--Silver);
+  text-align: center;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.marks {
+  display: flex;
+  place-items: center;
+  background: var(--Dark-Navy);
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+h5 {
+  color: var(--Silver);
+  text-align: center;
+  font-family: Outfit;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.875px;
+  opacity: 0.5;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.but {
+  width: 100%;
+  color: var(--Dark-Navy);
+  text-align: center;
+  font-family: Outfit;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  padding: 24px;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 3ms;
+}
+
+/* Utilities */
+
+.but-bg-yellow {
+  background: var(--Light-Yellow);
+  box-shadow: 0px -8px 0px 0px #cc8b13 inset;
+}
+
+.but-bg-light-blue {
+  background: var(--Light-Blue);
+  box-shadow: 0px -8px 0px 0px #118c87 inset;
+}
+
+.but-bg-yellow:hover {
+  background: var(--light-yellow-hover);
+  box-shadow: 0px -10px 0px 0px #cc8b13 inset;
+}
+
+.but-bg-light-blue:hover {
+  background: var(--light-blue-hover);
+  box-shadow: 0px -10px 0px 0px #118c87 inset;
+}
+
+.but-bg-yellow:focus {
+  background: var(--light-yellow-hover);
+  box-shadow: 0px -6px 0px 0px #cc8b13 inset;
+}
+
+.but-bg-light-blue:focus {
+  background: var(--light-blue-hover);
+  box-shadow: 0px -6px 0px 0px #118c87 inset;
+}
+
+/* End Utilities */
+
+/* End Start Widget */
+
+/* Game Widget */
+
+/* Header */
+
+.game__header {
+  display: flex;
+  align-items: center;
+  width: 460px;
+  margin-bottom: 20px;
+}
+
+.turn-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  background: var(--Semi-Dark-Navy);
+  box-shadow: 0px -4px 0px 0px #10212a inset;
+  width: 140px;
+  height: 52px;
+  margin: 0 108px 0 85px;
+}
+
+.turn-screen__text {
+  color: var(--Silver);
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.restart-but {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: var(--Silver);
+  outline: none;
+  border: none;
+  box-shadow: 0px -4px 0px 0px #6b8997 inset;
+}
+/* End Header */
+
+.game__board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.square {
+  border-radius: 16px;
+  background: var(--Semi-Dark-Navy);
+  box-shadow: 0px -8px 0px 0px #10212a inset;
+  width: 140px;
+  height: 140px;
+  display: grid;
+  place-items: center;
+}
+
+/* End Game Widget */
