@@ -320,6 +320,26 @@ function Game({ playWith, mark, setPlayWith }) {
             className="score bg-yellow"
           />
         </footer>
+        {playWith.cpu && mark && turn && !gameOver && (
+          <div className="youropponent text-sm-bold-silver-center-wide">
+            Your opponent is thinking
+            <div className="loading">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        )}
+        {playWith.cpu && !mark && !turn && !gameOver && (
+          <div className="youropponent text-sm-bold-silver-center-wide">
+            Your opponent is thinking
+            <div className="loading">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        )}
       </div>
       {restartOption && (
         <Popup
