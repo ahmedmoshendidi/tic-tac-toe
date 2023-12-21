@@ -6,10 +6,9 @@ function Xmark({ mark, setMark }) {
   };
   return (
     <svg
+      className="xmark"
       onClick={handleClick}
       xmlns="http://www.w3.org/2000/svg"
-      width="198"
-      height="54"
       viewBox="0 0 198 54"
       fill="none"
     >

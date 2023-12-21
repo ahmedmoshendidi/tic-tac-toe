@@ -1,12 +1,12 @@
 import React from "react";
 
-function Logo() {
+function Logo({ className }) {
   return (
     <svg
       width="72"
       height="32"
       xmlns="http://www.w3.org/2000/svg"
-      className="logo"
+      className={className}
     >
       <g fill="none" fillRule="evenodd">
         <path

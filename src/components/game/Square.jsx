@@ -1,11 +1,19 @@
 import Xicon from "./Xicon";
 import Oicon from "./Oicon";
-import { useState } from "react";
-function Square({ className, number, turn, setTurn, squares, setSquares }) {
+function Square({
+  className,
+  number,
+  turn,
+  setTurn,
+  squares,
+  setSquares,
+  timesPlay,
+  setTimesPlay,
+  playWith,
+  mark,
+}) {
   let newArray = [...squares];
-  const [clicked, setClicked] = useState(false);
   const handleClickSquare = () => {
-    console.log(newArray);
     if (newArray[number].isItEmpty) {
       newArray[number].isItEmpty = false;
       if (turn) {
@@ -14,14 +22,30 @@ function Square({ className, number, turn, setTurn, squares, setSquares }) {
         newArray[number].content = "o";
       }
       setTurn(!turn);
-      setClicked(true);
+      setTimesPlay(timesPlay + 1);
+      setSquares(newArray);
     }
   };
 
   return (
-    <div className={className} onClick={handleClickSquare}>
-      {clicked && <>{newArray[number].content == "x" && <Xicon />}</>}
-      {clicked && <>{newArray[number].content == "o" && <Oicon />}</>}
+    <div
+      className={className}
+      onClick={() => {
+        if (
+          (playWith.cpu && mark && !turn) ||
+          (playWith.cpu && !mark && turn) ||
+          playWith.cpu == false
+        ) {
+          handleClickSquare();
+        }
+      }}
+    >
+      {newArray[number].content == "x" && (
+        <Xicon winSquare={newArray[number].winSquare} />
+      )}
+      {newArray[number].content == "o" && (
+        <Oicon winSquare={newArray[number].winSquare} />
+      )}
     </div>
   );
 }
